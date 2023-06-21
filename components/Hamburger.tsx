@@ -1,21 +1,22 @@
 'use client'
 import { useState, useEffect } from "react"
 import Logo from "./Logo"
+import Link from "next/link"
 
 export default function Hamburger() {
     const [close, setClosed] = useState<boolean>(true)
 
     useEffect(() => {
         if (!close) {
-            document.body.style.overflow = 'hidden';
+            document.body.className = ('overflow-hidden')
         } else {
-            document.body.style.overflow = 'auto';
+            document.body.className = (' overflow-auto')
         }
     }, [close]);
 
     return (
         <>
-            <div className="fixed top-0 z-50 right-0 h-auto text-black m-7 flex items-center justify-center hover:cursor-pointer hover:text-gray-400"
+            <div className="absolute top-0 z-50 right-0 h-auto text-black m-7 flex items-center justify-center hover:cursor-pointer hover:text-gray-400"
                 onClick={e => setClosed(prev => !prev)}>
                 <>
                     {close
@@ -35,25 +36,20 @@ export default function Hamburger() {
                     }
                 </>
             </div>
-            <div className={`fixed h-screen w-screen bg-gray-700 opacity-0 z-20 transition-all duration-100 ${close ? 'opacity-0' : 'opacity-100'} ${close ? 'pointer-events-none' : 'pointer-events-auto'}`}>
-                <MenuContent />
+            {/* modal */}
+            <div className={`fixed top-0 md:h-[100dvh] h-[100dvh] w-full bg-gray-700 opacity-0 z-20 transition-all duration-300 ${close ? 'opacity-0' : 'opacity-100'} ${close ? 'pointer-events-none' : 'pointer-events-auto'}`}>
+                <main className="flex h-full w-full justify-center items-center">
+                    <div className="w-1/2 flex flex-col justify-center items-center">
+                        <Logo />
+                    </div>
+                    <div className="w-1/2 flex flex-col justify-center items-center">
+                        <Link href={'/'} onClick={e => setClosed(prev => !prev)}>Home</Link>
+                        <Link href={'/about'} onClick={e => setClosed(prev => !prev)}>About Us</Link>
+                        <Link href={'/products'} onClick={e => setClosed(prev => !prev)}>Products</Link>
+                        <Link href={'/contact'} onClick={e => setClosed(prev => !prev)}>Contact Us</Link>
+                    </div>
+                </main>
             </div>
         </>
-    )
-}
-
-export function MenuContent() {
-    return (
-        <main className="flex h-screen justify-center items-center">
-            <div className="h-full w-1/2 flex flex-col justify-center items-center">
-                <Logo />
-            </div>
-            <div className="h-full w-1/2 flex flex-col justify-center items-center">
-                <h1>Home</h1>
-                <h1>About Us</h1>
-                <h1>Products</h1>
-                <h1>Contact Us</h1>
-            </div>
-        </main>
     )
 }

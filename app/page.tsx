@@ -1,7 +1,11 @@
+import MissionStatement from "@/components/Mission"
+import ProductDisplay from "@/components/ProductDisplay"
+
 export default function Home() {
   return (
-    <main>
-      <h1>Home Page</h1>
+    <main className="flex flex-col gap-4">
+      <MissionStatement />
+      <ProductDisplay />
     </main>
   )
 }

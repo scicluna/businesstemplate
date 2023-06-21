@@ -24,7 +24,7 @@ export default function NavBar() {
     }, [path])
 
     return (
-        <nav className={`shadow-md shadow-gray-400 bg-gray-700 flex justify-between items-end ${size == "normal" ? 'md:h-[100dvh] h-[50dvh]' : 'h-[50dvh]'}  w-full relative font-extrabold text-lg`}>
+        <nav className={`shadow-md shadow-slate-400 bg-slate-600 flex justify-between items-end ${size == "normal" ? 'md:h-[100dvh] h-[50dvh]' : 'h-[50dvh]'}  w-full relative font-extrabold text-lg`}>
             {/* location of logo */}
             <div className="absolute top-0 left-0 z-20 h-auto m-7">
                 <Logo />

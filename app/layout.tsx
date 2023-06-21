@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="flex flex-col bg-red-50 min-h-fit" style={{ height: '170dvh' }}>
+        <main className="flex flex-col bg-slate-100 min-h-fit gap-4">
           <NavBar />
           {children}
         </main>

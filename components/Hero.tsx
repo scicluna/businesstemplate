@@ -16,8 +16,20 @@ export default function Hero({ page = "home" }) {
             image = "contacthero"
             break;
         }
-        case ("/productpage"): {
+        case ("/products"): {
             image = "producthero"
+            break;
+        }
+        case ("/products/kitchen"): {
+            image = "kitchenhero"
+            break;
+        }
+        case ("/products/electronics"): {
+            image = "electronicshero"
+            break;
+        }
+        case ("/products/wellness"): {
+            image = "wellnesshero"
             break;
         }
         default: {

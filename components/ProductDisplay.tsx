@@ -13,7 +13,7 @@ export default function ProductDisplay() {
 
 export function Product({ item }: { item: string }) {
     return (
-        <Link href={`/${item.toLocaleLowerCase()}`}>
+        <Link href={`/products/${item.toLocaleLowerCase()}`}>
             <div className="flex justify-start items-end h-72 rounded-lg w-full overflow-hidden">
                 <div className="h-72 w-full flex justify-start items-end transition-all hover:scale-[1.25] hover:cursor-pointer duration-500 overflow-hidden relative">
                     <Image src={`/images/${item}.webp`} fill alt={item} placeholder="blur" blurDataURL={`/images/${item}loading.webp`} style={{ objectFit: "fill" }} />

@@ -1,45 +1,68 @@
 import Image from "next/image"
+import homehero from '../public/images/homehero.webp'
+import abouthero from '../public/images/abouthero.webp'
+import contacthero from '../public/images/contacthero.webp'
+import producthero from '../public/images/producthero.webp'
+import kitchenhero from '../public/images/kitchenhero.webp'
+import electronicshero from '../public/images/electronicshero.webp'
+import wellnesshero from '../public/images/wellnesshero.webp'
+import homeheroloading from '../public/images/homeheroloading.webp'
+import aboutheroloading from '../public/images/aboutheroloading.webp'
+import contactheroloading from '../public/images/contactheroloading.webp'
+import productheroloading from '../public/images/productheroloading.webp'
+import kitchenheroloading from '../public/images/kitchenheroloading.webp'
+import electronicsheroloading from '../public/images/electronicsheroloading.webp'
+import wellnessheroloading from '../public/images/wellnessheroloading.webp'
 
 export default function Hero({ page = "home" }) {
 
-    let image = ""
+    let image;
+    let loading;
     switch (page) {
         case "/": {
-            image = "homehero"
+            image = homehero
+            loading = homeheroloading
             break;
         }
         case ("/about"): {
-            image = "abouthero"
+            image = abouthero
+            loading = aboutheroloading
             break;
         }
         case ("/contact"): {
-            image = "contacthero"
+            image = contacthero
+            loading = contactheroloading
             break;
         }
         case ("/products"): {
-            image = "producthero"
+            image = producthero
+            loading = productheroloading
             break;
         }
         case ("/products/kitchen"): {
-            image = "kitchenhero"
+            image = kitchenhero
+            loading = kitchenheroloading
             break;
         }
         case ("/products/electronics"): {
-            image = "electronicshero"
+            image = electronicshero
+            loading = electronicsheroloading
             break;
         }
         case ("/products/wellness"): {
-            image = "wellnesshero"
+            image = wellnesshero
+            loading = wellnessheroloading
             break;
         }
         default: {
-            image = "homehero"
+            image = homehero
+            loading = homeheroloading
         }
     }
 
     return (
         <div className="absolute h-full w-full z-10 overflow-hidden">
-            <Image src={`/images/${image}.webp`} placeholder="blur" blurDataURL={`/images/${image}loading.webp`} sizes="100dvw" fill alt="..." style={{ objectFit: "cover", objectPosition: "center" }} />
+            <Image src={image.src} fill alt="..." loading="eager" style={{ objectFit: "cover", objectPosition: "center" }} />
         </div>
     )
 }

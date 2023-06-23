@@ -23,6 +23,10 @@ export default function NavBar() {
         }
     }, [path])
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [path])
+
     return (
         <nav className={`shadow-md shadow-slate-400 bg-slate-600 flex justify-between items-end ${size == "normal" ? 'md:h-[100dvh] h-[50dvh]' : 'h-[50dvh]'}  w-full relative font-extrabold text-lg`}>
             {/* location of logo */}

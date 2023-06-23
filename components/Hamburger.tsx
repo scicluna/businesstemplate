@@ -45,7 +45,7 @@ export default function Hamburger() {
                     <div className="w-1/2 flex flex-col justify-center items-center">
                         <Link href={'/'} onClick={e => setClosed(prev => !prev)}>Home</Link>
                         <Link href={'/about'} onClick={e => setClosed(prev => !prev)}>About Us</Link>
-                        <Link href={'/productpage'} onClick={e => setClosed(prev => !prev)}>Products</Link>
+                        <Link href={'/products'} onClick={e => setClosed(prev => !prev)}>Products</Link>
                         <Link href={'/contact'} onClick={e => setClosed(prev => !prev)}>Contact Us</Link>
                     </div>
                 </main>
